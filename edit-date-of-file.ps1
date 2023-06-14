@@ -15,8 +15,14 @@
   - "last modified date"
   - "creation date"
   - "last access date"
-  
+
   By default, `NewDate` is the current date.
+
+  .PARAMETER Recursive
+  In case the `Path` you have specified is targetting a folder, you can add the
+  `-Recursive` option (alias: `-Rec`, `-R`), so that all the files within that
+  folder will also be targetted by this script, and their dates will be editted
+  too.
 
   .INPUTS
   None. You cannot pipe objects to this script.
@@ -45,7 +51,8 @@
 
 param (
     [parameter(mandatory)][string]$Path,
-    [parameter(mandatory)][DateTime]$NewDate = (Get-Date))
+    [parameter(mandatory)][DateTime]$NewDate = (Get-Date),
+    [parameter()][Alias("Rec","R")][switch]$Recursive)
 
 
 $file = Get-Item $Path
