@@ -9,7 +9,7 @@ of a file or a folder.
 
 ## Usage
 
-### Execute Inline
+### Execute Inline Without Cloning
 
 Syntax:
 ```ps1
@@ -25,7 +25,7 @@ Examples:
 
 - Edit a folder with the current date.
   ```ps1
-  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path demo.txt
+  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path C:\Users\demo
   ```
 
 
