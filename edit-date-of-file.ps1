@@ -42,6 +42,10 @@
   PS> # Edit a folder with the current date.
   PS> .\edit-date-of-file.ps1 -Path C:\Users\demo
 
+  .EXAMPLE
+  PS> # Edit a folder and all of the files it contains, with a specific date.
+  PS> .\edit-date-of-file.ps1 -Path C:\Users\demo -NewDate (Get-Date("2020-12-31T23:54:43")) -R
+
   .LINK
   Online version: https://github.com/taljacob2/edit-date-of-file
 
