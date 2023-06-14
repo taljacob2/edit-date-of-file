@@ -9,6 +9,8 @@ of a file or a folder.
 
 ## Usage
 
+The following commands should be run with *powershell.exe*.
+
 ### Execute Inline Without Cloning
 
 Syntax:
@@ -39,7 +41,6 @@ git clone https://github.com/taljacob2/edit-date-of-file
 
 #### Run
 
-Open *powershell.exe* and run:
 ```
 .\edit-date-of-file.ps1 -Path <String> [-NewDate (<DateTime>)]
 ```
@@ -51,7 +52,7 @@ powershell.exe -NoLogo -ExecutionPolicy Bypass -Command ".\edit-date-of-file.ps1
 
 ## Help
 
-To view the full documentation of the script, open *powershell.exe* and run:
+To view the full documentation of the script, run:
 ```
 Get-Help .\edit-date-of-file.ps1 -Full
 ```
