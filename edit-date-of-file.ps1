@@ -62,10 +62,14 @@ param (
 
 function Edit-Date-Of-File {
   param (
-    [parameter(mandatory)][string]$Path
+    [parameter()][string]$Path,
+    [parameter()][string]$Item
   )
 
-  $file = Get-Item $Path
+  $file = $Item
+  if ($Path) {
+    $file = Get-Item $Path
+  }
 
   # Edit "last modified".
   $file.LastWriteTime = $NewDate
@@ -84,8 +88,9 @@ Edit-Date-Of-File -Path $Path
 $isFileAFolder = Test-Path -Path $Path -PathType Container
 
 if ($isFileAFolder -and $Recursive) {
-  Write-Output "is a folder"
-  # foreach($f in $file) {
-
-  # }
+  $file = Get-Item $Path
+  Get-ChildItem $file -Recurse | 
+  Foreach-Object {
+    Edit-Date-Of-File -Path $_.FullName
+  }
 }
