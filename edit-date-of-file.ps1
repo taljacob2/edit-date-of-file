@@ -54,18 +54,38 @@
 #>
 
 param (
-    [parameter(mandatory)][string]$Path,
-    [parameter(mandatory)][DateTime]$NewDate = (Get-Date),
-    [parameter()][Alias("Rec","R")][switch]$Recursive)
+  [parameter(mandatory)][string]$Path,
+  [parameter(mandatory)][DateTime]$NewDate = (Get-Date),
+  [parameter()][Alias("Rec","R")][switch]$Recursive
+)
 
 
-$file = Get-Item $Path
+function Edit-Date-Of-File {
+  param (
+    [parameter(mandatory)][string]$Path
+  )
 
-# Edit "last modified".
-$file.LastWriteTime = $NewDate
+  $file = Get-Item $Path
 
-# Edit "creation date".
-$file.CreationTime = $NewDate
+  # Edit "last modified".
+  $file.LastWriteTime = $NewDate
 
-# Edit "last access date".
-$file.LastAccessTime = $NewDate
+  # Edit "creation date".
+  $file.CreationTime = $NewDate
+
+  # Edit "last access date".
+  $file.LastAccessTime = $NewDate
+}
+
+# Edit the dates of the given `$file`.
+Edit-Date-Of-File -Path $Path
+
+# Is the given `$file` a folder.
+$isFileAFolder = Test-Path -Path $Path -PathType Container
+
+if ($isFileAFolder -and $Recursive) {
+  Write-Output "is a folder"
+  # foreach($f in $file) {
+
+  # }
+}
