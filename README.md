@@ -1,9 +1,10 @@
 # edit-date-of-file
 
-A PowerShell script that edits the
+A PowerShell script that edits the:
   - "last modified date"
   - "creation date"
   - "last access date"
+
 of a file or a folder.
 
 ## Usage

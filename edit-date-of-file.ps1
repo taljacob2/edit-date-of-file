@@ -4,6 +4,7 @@
   - "last modified date"
   - "creation date"
   - "last access date"
+
   of a file or a folder.
 
   .PARAMETER Path
@@ -14,6 +15,7 @@
   - "last modified date"
   - "creation date"
   - "last access date"
+  
   By default, `NewDate` is the current date.
 
   .INPUTS
