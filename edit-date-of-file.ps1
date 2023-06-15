@@ -55,7 +55,7 @@
 
 param (
   [parameter(mandatory)][string]$Path,
-  [parameter(mandatory)][DateTime]$NewDate = (Get-Date),
+  [parameter()][DateTime]$NewDate = (Get-Date),
   [parameter()][Alias("Rec","R")][switch]$Recursive
 )
 
