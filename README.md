@@ -15,7 +15,7 @@ The following commands should be run with *powershell.exe*.
 
 Syntax:
 ```ps1
-& ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path <String> [-NewDate (<DateTime>)]
+& ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path <String> [-NewDate (<DateTime>)] [-Recursive | -Rec | -R]
 ```
 
 Examples:
@@ -30,6 +30,10 @@ Examples:
   & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path C:\Users\demo
   ```
 
+- Edit a folder and all of its content, with a specific date.
+  ```ps1
+  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path C:\Users\demo -NewDate (Get-Date("2020-12-31T23:54:43")) -R
+  ```
 
 ### Execute Offline
 
