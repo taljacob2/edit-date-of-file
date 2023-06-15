@@ -66,6 +66,11 @@ function Edit-Date-Of-File {
     [parameter()][string]$Item
   )
 
+  <#
+    .SYNOPSIS
+    Edits the dates of the given file or folder.
+  #>
+
   $file = $Item
   if ($Path) {
     $file = Get-Item $Path
@@ -81,16 +86,41 @@ function Edit-Date-Of-File {
   $file.LastAccessTime = $NewDate
 }
 
-# Edit the dates of the given `$file`.
-Edit-Date-Of-File -Path $Path
+function Edit-Date-Of-Folder-Content-Recursively {
+  param (
+    [parameter()][string]$Path,
+    [parameter()][string]$Item
+  )
 
-# Is the given `$file` a folder.
-$isFileAFolder = Test-Path -Path $Path -PathType Container
+  <#
+    .SYNOPSIS
+    Edits the dates of the given folder recursively.
 
-if ($isFileAFolder -and $Recursive) {
-  $file = Get-Item $Path
-  Get-ChildItem $file -Recurse | 
-  Foreach-Object {
-    Edit-Date-Of-File -Path $_.FullName
+    .DESCRIPTION
+    Edits the dates of the given folder recursively, (does not edit the
+    dates of the given folder - only its contents).
+
+    First, verifies whether the given file is a folder or not.
+    In case it is not a folder, then this function quits.
+  #>
+
+  $file = $Item
+  if ($Path) {
+    $file = Get-Item $Path
+  }
+
+  # Is the given `$file` a folder.
+  $isFileAFolder = Test-Path -Path $Path -PathType Container
+
+  if ($isFileAFolder -and $Recursive) {
+    $file = Get-Item $Path
+    Get-ChildItem $file -Recurse | 
+    Foreach-Object {
+      Edit-Date-Of-File -Path $_.FullName
+    }
   }
 }
+
+Edit-Date-Of-File -Path $Path
+
+Edit-Date-Of-Folder-Content-Recursively -Path $Path
