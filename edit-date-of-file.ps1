@@ -44,8 +44,9 @@
 #>
 
 param (
-    [parameter(mandatory)][string]$Path,
-    [parameter(mandatory)][DateTime]$NewDate = (Get-Date))
+  [parameter(mandatory)][string]$Path,
+  [parameter()][DateTime]$NewDate = (Get-Date)
+)
 
 
 $file = Get-Item $Path
