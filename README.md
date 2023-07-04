@@ -46,12 +46,12 @@ git clone https://github.com/taljacob2/edit-date-of-file
 #### Run
 
 ```
-.\edit-date-of-file.ps1 -Path <String> [-NewDate (<DateTime>)]
+.\edit-date-of-file.ps1 -Path <String> [-NewDate (<DateTime>)] [-Recursive | -Rec | -R]
 ```
 
 In case you encouter an error, try running with:
 ```
-powershell.exe -NoLogo -ExecutionPolicy Bypass -Command ".\edit-date-of-file.ps1 -Path <String> [-NewDate (<DateTime>)]"
+powershell.exe -NoLogo -ExecutionPolicy Bypass -Command ".\edit-date-of-file.ps1 -Path <String> [-NewDate (<DateTime>)] [-Recursive | -Rec | -R]"
 ```
 
 ## Help
