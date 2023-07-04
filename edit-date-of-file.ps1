@@ -63,7 +63,7 @@ param (
 function Edit-Date-Of-File {
   param (
     [parameter()][string]$Path,
-    [parameter()][string]$Item
+    [parameter()][System.IO.FileSystemInfo]$Item
   )
 
   <#
@@ -89,7 +89,7 @@ function Edit-Date-Of-File {
 function Edit-Date-Of-Folder-Content-Recursively {
   param (
     [parameter()][string]$Path,
-    [parameter()][string]$Item
+    [parameter()][System.IO.FileSystemInfo]$Item
   )
 
   <#
