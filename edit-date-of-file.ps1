@@ -36,7 +36,7 @@
 
   .EXAMPLE
   PS> # Edit a file with a specific date.
-  PS> .\edit-date-of-file.ps1 -Path demo.txt -NewDate (Get-Date("2020-12-31T23:54:43"))
+  PS> .\edit-date-of-file.ps1 -Path demo.txt -NewDate (Get-Date('2020-12-31T23:54:43'))
 
   .EXAMPLE
   PS> # Edit a folder with the current date.
@@ -44,7 +44,7 @@
 
   .EXAMPLE
   PS> # Edit a folder and all of its content, with a specific date.
-  PS> .\edit-date-of-file.ps1 -Path C:\Users\demo -NewDate (Get-Date("2020-12-31T23:54:43")) -R
+  PS> .\edit-date-of-file.ps1 -Path C:\Users\demo -NewDate (Get-Date('2020-12-31T23:54:43')) -R
 
   .LINK
   Online version: https://github.com/taljacob2/edit-date-of-file

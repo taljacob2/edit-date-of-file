@@ -22,7 +22,7 @@ Examples:
 
 - Edit a file with a specific date.
   ```ps1
-  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path demo.txt -NewDate (Get-Date("2020-12-31T23:54:43"))
+  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path demo.txt -NewDate (Get-Date('2020-12-31T23:54:43'))
   ```
 
 - Edit a folder with the current date.
@@ -32,7 +32,7 @@ Examples:
 
 - Edit a folder and all of its content, with a specific date.
   ```ps1
-  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path C:\Users\demo -NewDate (Get-Date("2020-12-31T23:54:43")) -R
+  & ([scriptblock]::Create((iwr https://raw.githubusercontent.com/taljacob2/edit-date-of-file/master/edit-date-of-file.ps1 -useb))) -Path C:\Users\demo -NewDate (Get-Date('2020-12-31T23:54:43')) -R
   ```
 
 ### Execute Offline
